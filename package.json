@@ -15,6 +15,7 @@
   "author": "Marco Baldassarri",
   "license": "ISC",
   "dependencies": {
+    "node-dash-button": "^0.6.1",
     "telebot": "^1.2.3"
   }
 }
