@@ -1,0 +1,20 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "Trigger events when receive a message from Amazon Dash Button",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dash-button",
+    "telegram-bot",
+    "api",
+    "smart-home"
+  ],
+  "author": "Marco Baldassarri",
+  "license": "ISC",
+  "dependencies": {
+    "telebot": "^1.2.3"
+  }
+}
