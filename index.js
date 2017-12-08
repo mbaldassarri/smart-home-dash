@@ -2,7 +2,7 @@ const vars = require('./vars');
 const TeleBot = require('telebot');
 const dash_button = require('node-dash-button');
 const bot = new TeleBot(vars.TELEGRAM_BOT_TOKEN);
-var dash = dash_button([vars.AMAZON_DASH_ALERT_MAC, vars.AMAZON_DASH_IOT_MAC], null, null, 'all'); 
+var dash = dash_button(vars.AMAZON_DASH_ALERT_MAC, null, null, 'all'); 
 bot.start();
 
 const alertArray = [
@@ -12,27 +12,16 @@ const alertArray = [
     "Vemme ad aiutà che non me tengo ritta!",
     "Sfacciataccia, veni su! \u{1F612}",
     "NNAMARIA !!! NNAMARI' !!! \u{1F60A}",
-    "Me juti?? Grazie cocca..."
+    "Me juti?? Grazie cocca...",
+    "Sbrighete venne su che me caco sotto!!! \u{1F630}"
   ];
 
 dash.on("detected", function (dash_id){
     if (dash_id === vars.AMAZON_DASH_ALERT_MAC){
         bot.sendMessage(vars.CHAT_ID, alertArray[Math.floor(Math.random() * alertArray.length)]);
-        // type http post call to localhost Home-Assistant here to buzzer rPi
-    } else if (dash_id === vars.AMAZON_DASH_IOT_MAC){
-        bot.sendMessage(vars.CHAT_ID, "iot");
-        //type http post call to localhost Home-Assistant here to turn on lights
     }
 });
 
 bot.on('/hello', (msg) => {
     return bot.sendMessage(msg.from.id, `Ciao ${ msg.from.first_name }! Ti trovo bene oggi ! \u{1F604}`);
-});
-
-bot.on('/accendi_luci', (msg) => {
-    //http post call to localhost HA to turn on lights
-});
-
-bot.on('/spegni_luci', (msg) => {
-    //http post call to localhost HA to turn on lights
 });
