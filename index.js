@@ -6,14 +6,8 @@ var dash = dash_button(vars.AMAZON_DASH_ALERT_MAC, null, null, 'all');
 bot.start();
 
 const alertArray = [
-    "Ho bisogno di aiuto! Chiamami",
-    "Do si jita?? \u{1F621}",
-    "Vai sempre jirenne, do si rriata?! \u{1F624}",
-    "Vemme ad aiutà che non me tengo ritta!",
-    "Sfacciataccia, veni su! \u{1F612}",
-    "NNAMARIA !!! NNAMARI' !!! \u{1F60A}",
-    "Me juti?? Grazie cocca...",
-    "Sbrighete venne su che me caco sotto!!! \u{1F630}"
+    "I need help! Come here",
+    "Insert other random alerts here..."
   ];
 
 dash.on("detected", function (dash_id){
